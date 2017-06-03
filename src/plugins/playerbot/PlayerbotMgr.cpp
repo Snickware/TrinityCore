@@ -5,7 +5,6 @@
 #include "RandomPlayerbotMgr.h"
 #include "CharacterCache.h"
 
-
 class LoginQueryHolder;
 class CharacterHandler;
 
@@ -291,6 +290,12 @@ list<string> PlayerbotHolder::HandlePlayerbotCommand(char const* args, Player* m
 
     std::string cmdStr = cmd;
     std::string charnameStr = charname;
+    for (unsigned int index = 0; index < charnameStr.length(); index++) {
+        char c = charnameStr[index];
+        if ( (c < 'a' || c > 'z') && (c < 'A' || c > 'Z') ) {
+            charnameStr.erase(index);
+        }
+    }
 
     set<string> bots;
     if (charnameStr == "*" && master)
