@@ -105,12 +105,12 @@ AiPlayerbot.LowMana = 15
 AiPlayerbot.MediumMana = 40
 
 # Enable random bot system
-AiPlayerbot.RandomBotAutologin = 1
+AiPlayerbot.RandomBotAutologin = 0
 
 # Random bot default strategies (applied after defaults)
 AiPlayerbot.RandomBotCombatStrategies = +dps,+attack weak
 AiPlayerbot.RandomBotNonCombatStrategies = +grind,+move random,+loot
-AiPlayerbot.CombatStrategies = +custom::say"
+AiPlayerbot.CombatStrategies = +custom::say
 AiPlayerbot.NonCombatStrategies = +custom::say
 
 # Create random bot characters automatically
@@ -197,4 +197,5 @@ AiPlayerbot.LogValuesPerTick = 0
 AiPlayerbot.RandomChangeMultiplier = 1
 
 # Command server port, 0 - disabled
-AiPlayerbot.CommandServerPort = 8888
+#AiPlayerbot.CommandServerPort = 8888
+AiPlayerbot.CommandServerPort = 0
