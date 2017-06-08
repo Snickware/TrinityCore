@@ -292,7 +292,7 @@ list<string> PlayerbotHolder::HandlePlayerbotCommand(char const* args, Player* m
     std::string charnameStr = charname;
     for (unsigned int index = 0; index < charnameStr.length(); index++) {
         char c = charnameStr[index];
-        if ( (c < 'a' || c > 'z') && (c < 'A' || c > 'Z') ) {
+        if ( (c < 'a' || c > 'z') && (c < 'A' || c > 'Z') && (c != 42)) { // 42 == *
             charnameStr.erase(index);
         }
     }
