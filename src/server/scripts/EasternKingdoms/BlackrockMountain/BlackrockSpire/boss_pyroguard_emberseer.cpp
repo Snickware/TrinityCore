@@ -252,9 +252,12 @@ public:
                             bool _hasAura = true;
                             Map::PlayerList const &players = me->GetMap()->GetPlayers();
                             for (Map::PlayerList::const_iterator itr = players.begin(); itr != players.end(); ++itr)
-                                if (Player* player = itr->GetSource()->ToPlayer())
+                                if (Player* player = itr->GetSource()->ToPlayer()) {
+                                    if (player->GetPlayerbotAI()) // ignore playerbots for this check
+                                        continue;
                                     if (!player->HasAura(SPELL_EMBERSEER_OBJECT_VISUAL))
                                         _hasAura = false;
+                                }
 
                             if (_hasAura)
                             {
